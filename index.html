@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crescent City Music - Recording Studio & Music Lessons | New Orleans</title>
+    <meta name="description" content="Professional recording studio and music lessons in New Orleans. Contact Claire Duperie at Crescent City Music for album production and vocal training.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #000;
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: rgba(13, 71, 161, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links a:hover,
+        .nav-links a:focus {
+            color: #81c784;
+            outline: 2px solid #81c784;
+            outline-offset: 2px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1565c0 0%, #0d47a1 100%);
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M20,50 Q50,20 80,50 T140,50" stroke="rgba(255,255,255,0.1)" stroke-width="2" fill="none"/></svg>') repeat;
+            animation: wave 20s linear infinite;
+        }
+        
+        @keyframes wave {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100px); }
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: #4caf50;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+        }
+        
+        .cta-button:hover,
+        .cta-button:focus {
+            background: #388e3c;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+            outline: 2px solid #81c784;
+            outline-offset: 2px;
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            color: #0d47a1;
+        }
+        
+        .contact .section-title {
+            color: white;
+            font-size: 3rem;
+            text-align: center;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .service-card {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .service-card:hover,
+        .service-card:focus-within {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(13, 71, 161, 0.15);
+            border-color: #1976d2;
+        }
+        
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .service-card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #0d47a1;
+        }
+        
+        .service-card p {
+            color: #000;
+            line-height: 1.6;
+        }
+        
+        /* About Section */
+        .about {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%);
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .about-text h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: #0d47a1;
+        }
+        
+        .about-text p {
+            color: #000;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .about-image {
+            background: linear-gradient(45deg, #1976d2, #42a5f5);
+            height: 400px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4rem;
+            box-shadow: 0 10px 30px rgba(25, 118, 210, 0.3);
+        }
+        
+        /* Blog Section */
+        .blog {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .blog-card {
+            background: #f8f9fa;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .blog-card:hover,
+        .blog-card:focus-within {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(13, 71, 161, 0.15);
+            border-color: #1976d2;
+        }
+        
+        .blog-header {
+            background: linear-gradient(135deg, #1976d2, #42a5f5);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .blog-header h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .blog-content {
+            padding: 2rem;
+        }
+        
+        .blog-content p {
+            color: #000;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+        
+        .blog-link {
+            display: inline-block;
+            color: #1976d2;
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.3s ease;
+        }
+        
+        .blog-link:hover,
+        .blog-link:focus {
+            border-bottom-color: #1976d2;
+            outline: 2px solid #1976d2;
+            outline-offset: 2px;
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #0d47a1 0%, #1565c0 100%);
+            color: white;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .contact-item {
+            text-align: center;
+            padding: 1.5rem;
+        }
+        
+        .contact-item h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #81c784;
+        }
+        
+        .contact-item p,
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+        
+        .contact-item a:hover,
+        .contact-item a:focus {
+            color: #81c784;
+            outline: 2px solid #81c784;
+            outline-offset: 2px;
+        }
+        
+        /* Footer */
+        footer {
+            background: #263238;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        
+        /* Responsive Design - Mobile First */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2.8rem;
+                line-height: 1.2;
+            }
+            
+            .hero p {
+                font-size: 1.4rem;
+                margin-bottom: 2.5rem;
+            }
+            
+            .cta-button {
+                padding: 18px 35px;
+                font-size: 1.2rem;
+                min-height: 60px;
+                border-radius: 10px;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 2rem;
+            }
+            
+            .about-image {
+                height: 280px;
+                order: -1;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+                margin-bottom: 2rem;
+            }
+            
+            .contact .section-title {
+                font-size: 2.8rem;
+            }
+            
+            .service-card {
+                padding: 2.5rem 1.5rem;
+            }
+            
+            .service-card h3 {
+                font-size: 1.6rem;
+                margin-bottom: 1.2rem;
+            }
+            
+            .service-card p {
+                font-size: 1.1rem;
+                line-height: 1.7;
+            }
+            
+            .service-icon {
+                font-size: 3.5rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            .blog-card {
+                margin-bottom: 1rem;
+            }
+            
+            .blog-header h3 {
+                font-size: 1.6rem;
+            }
+            
+            .blog-content {
+                padding: 2.5rem 2rem;
+            }
+            
+            .blog-content p {
+                font-size: 1.1rem;
+                line-height: 1.7;
+            }
+            
+            .blog-link {
+                font-size: 1.1rem;
+                padding: 8px 0;
+                display: inline-block;
+            }
+            
+            .contact-grid {
+                gap: 2.5rem;
+                margin-top: 2rem;
+            }
+            
+            .contact-item {
+                padding: 2rem 1rem;
+            }
+            
+            .contact-item h3 {
+                font-size: 1.4rem;
+                margin-bottom: 1.2rem;
+            }
+            
+            .contact-item p,
+            .contact-item a {
+                font-size: 1.2rem;
+                line-height: 1.5;
+            }
+            
+            .contact-item a {
+                padding: 8px 16px;
+                border-radius: 6px;
+                background: rgba(255,255,255,0.1);
+                display: inline-block;
+                margin-top: 0.5rem;
+            }
+            
+            .about-text h2 {
+                font-size: 2.2rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            .about-text p {
+                font-size: 1.1rem;
+                line-height: 1.7;
+                margin-bottom: 1.5rem;
+            }
+            
+            /* Larger tap targets */
+            .nav-links a,
+            .cta-button,
+            .blog-link,
+            .contact-item a {
+                min-height: 44px;
+                min-width: 44px;
+            }
+            
+            /* Better spacing */
+            .container {
+                padding: 0 15px;
+            }
+            
+            .services, .about, .blog, .contact {
+                padding: 60px 0;
+            }
+            
+            .hero {
+                padding: 100px 0 60px;
+            }
+        }
+        
+        /* Extra small screens */
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2.4rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
+            .services-grid,
+            .blog-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .contact .section-title {
+                font-size: 2.4rem;
+            }
+        }
+        
+        /* Focus styles for accessibility */
+        *:focus {
+            outline: 2px solid #4caf50;
+            outline-offset: 2px;
+        }
+        
+        /* Skip link for screen readers */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 6px;
+            background: #000;
+            color: white;
+            padding: 8px;
+            text-decoration: none;
+            border-radius: 4px;
+            z-index: 1001;
+        }
+        
+        .skip-link:focus {
+            top: 6px;
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <header>
+        <nav class="container">
+            <a href="#" class="logo" aria-label="Crescent City Music Home">Crescent City Music</a>
+            <ul class="nav-links" role="navigation" aria-label="Main navigation">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Crescent City Music</h1>
+                    <p>Professional Recording Studio & Music Lessons in the Heart of New Orleans</p>
+                    <a href="#contact" class="cta-button">Start Your Musical Journey</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="services">
+            <div class="container">
+                <h2 class="section-title">Our Services</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">🎙️</div>
+                        <h3>Recording Studio</h3>
+                        <p>State-of-the-art recording facilities where we help artists create professional recordings and release albums. From demo tracks to full album production, we bring your musical vision to life.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">🎼</div>
+                        <h3>Music Lessons</h3>
+                        <p>Expert music instruction for all skill levels. Whether you're picking up an instrument for the first time or refining your technique, our experienced instructors will guide your musical growth.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">🎤</div>
+                        <h3>Vocal Training</h3>
+                        <p>Professional singing lessons to develop your voice and performance skills. From breath control to stage presence, we help vocalists reach their full potential.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-text">
+                        <h2>About Crescent City Music</h2>
+                        <p>Located in the vibrant heart of New Orleans, Crescent City Music is your premier destination for professional recording services and music education. We combine the rich musical heritage of our city with modern technology and techniques.</p>
+                        <p>Our studio provides a creative environment where artists can explore their sound and bring their musical dreams to reality. From jazz to blues, funk to contemporary, we celebrate all genres while honoring the soulful spirit of New Orleans music.</p>
+                        <p>Under the guidance of owner Claire Duperie, we've built a reputation for excellence in both recording production and music instruction, helping countless artists and students achieve their musical goals.</p>
+                    </div>
+                    <div class="about-image" role="img" aria-label="Musical note illustration">
+                        🎷
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="blog" class="blog">
+            <div class="container">
+                <h2 class="section-title">Latest News</h2>
+                <div class="blog-grid">
+                    <article class="blog-card">
+                        <div class="blog-header">
+                            <h3>🎺 Trumpet Mafia's New Album!</h3>
+                            <p>March 2025</p>
+                        </div>
+                        <div class="blog-content">
+                            <p>We're absolutely thrilled to announce that the incredible New Orleans band Trumpet Mafia is releasing their highly anticipated new album! Known for their explosive brass sound and infectious energy, Trumpet Mafia continues to push the boundaries of New Orleans jazz.</p>
+                            <p>The band's unique blend of traditional jazz elements with contemporary influences creates a sound that's both rooted in our city's musical heritage and boldly innovative.</p>
+                            <a href="https://www.neworleans.com/listing/trumpet-mafia/46633/" class="blog-link" target="_blank" rel="noopener noreferrer">Learn more about Trumpet Mafia →</a>
+                        </div>
+                    </article>
+                    
+                    <article class="blog-card">
+                        <div class="blog-header">
+                            <h3>🎵 Studio Updates</h3>
+                            <p>February 2025</p>
+                        </div>
+                        <div class="blog-content">
+                            <p>Exciting developments at Crescent City Music! We've recently upgraded our recording equipment and expanded our lesson program offerings. Our commitment to providing the best possible experience for our artists and students continues to drive our growth.</p>
+                            <p>New additions include enhanced acoustic treatment, updated digital mixing capabilities, and expanded scheduling options for both recording sessions and music lessons.</p>
+                            <a href="#contact" class="blog-link">Contact us to learn more →</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2 class="section-title">Get In Touch</h2>
+                <div class="contact-grid">
+                    <div class="contact-item">
+                        <h3>📍 Location</h3>
+                        <p>107 Holmes<br>New Orleans, LA</p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>📞 Phone</h3>
+                        <a href="tel:504-945-5787">(504) 945-5787</a>
+                    </div>
+                    <div class="contact-item">
+                        <h3>Owner</h3>
+                        <p>Claire Duperie</p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>🎵 Services</h3>
+                        <p>Recording Studio<br>Music & Vocal Lessons</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Crescent City Music. Bringing the soul of New Orleans to every note.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll effect to header
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(13, 71, 161, 0.98)';
+            } else {
+                header.style.background = 'rgba(13, 71, 161, 0.95)';
+            }
+        });
+    </script>
+</body>
+</html>
