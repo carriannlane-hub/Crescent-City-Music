@@ -30,7 +30,7 @@
         header {
             background: rgba(13, 71, 161, 0.95);
             backdrop-filter: blur(10px);
-            padding: 16px 0;
+            padding: 12px 0;
             position: fixed;
             width: 100%;
             top: 0;
@@ -38,13 +38,27 @@
             box-shadow: 0 2px 20px rgba(0,0,0,0.1);
         }
         
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+        
+        .logo-img {
+            height: 32px;
+            width: 32px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 4px;
+            padding: 2px;
+        }
+        
         .logo {
-            font-size: 1.4rem;
+            font-size: 1.2rem;
             font-weight: 700;
             color: white;
             text-decoration: none;
-            text-align: center;
-            display: block;
+            line-height: 1.2;
         }
         
         /* Hero Section - Mobile optimized */
@@ -327,6 +341,21 @@
             font-size: 0.9rem;
         }
         
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+        
+        .footer-logo {
+            height: 48px;
+            width: 48px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 6px;
+            padding: 4px;
+        }
+        
         /* Focus styles for accessibility */
         *:focus {
             outline: 2px solid #4caf50;
@@ -369,7 +398,9 @@
     
     <header>
         <div class="container">
-            <a href="#" class="logo" aria-label="Crescent City Music Home">Crescent City Music</a>
+            <div class="header-content">
+                <img src="crescent-city-logo-transparent.png" alt="Crescent City Music Company Logo" class="logo-img">
+            </div>
         </div>
     </header>
 
@@ -477,7 +508,10 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 Crescent City Music. Bringing the soul of New Orleans to every note.</p>
+            <div class="footer-content">
+                <img src="crescent-city-logo-transparent.png" alt="Crescent City Music Company Logo" class="footer-logo">
+                <p>&copy; 2025 Crescent City Music. Bringing the soul of New Orleans to every note.</p>
+            </div>
         </div>
     </footer>
 
