@@ -39,18 +39,7 @@
         }
         
         .header-content {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-        }
-        
-        .logo-img {
-            height: 32px;
-            width: 32px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 4px;
-            padding: 2px;
+            text-align: center;
         }
         
         .logo {
@@ -70,6 +59,12 @@
             position: relative;
         }
         
+        .hero-logo {
+            height: 120px;
+            width: 120px;
+            margin: 0 auto 20px;
+        }
+        
         .hero h1 {
             font-size: 2.2rem;
             font-weight: 800;
@@ -83,32 +78,6 @@
             margin-bottom: 24px;
             opacity: 0.95;
             line-height: 1.4;
-        }
-        
-        .cta-button {
-            display: inline-block;
-            background: #4caf50;
-            color: white;
-            padding: 16px 32px;
-            text-decoration: none;
-            border-radius: 10px;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
-            min-height: 48px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: fit-content;
-            margin: 0 auto;
-        }
-        
-        .cta-button:hover,
-        .cta-button:focus {
-            background: #388e3c;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
         }
         
         /* Section styling */
@@ -399,16 +368,16 @@
     <header>
         <div class="container">
             <div class="header-content">
-                <img src="crescent-city-logo-transparent.png" alt="Crescent City Music Company Logo" class="logo-img">
+                <a href="#" class="logo" aria-label="Crescent City Music Home">Crescent City Music</a>
             </div>
         </div>
     </header>
 
     <main id="main-content">
         <section class="hero">
+            <img src="CCM-Logo-w-white.png" alt="Crescent City Music Company Logo" class="hero-logo">
             <h1>Crescent City Music</h1>
             <p>Professional Recording Studio & Music Lessons in New Orleans</p>
-            <a href="#contact" class="cta-button">Get In Touch</a>
         </section>
 
         <section class="section section-white">
@@ -509,7 +478,7 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <img src="crescent-city-logo-transparent.png" alt="Crescent City Music Company Logo" class="footer-logo">
+                <img src="CCM-Logo-w-white.png" alt="Crescent City Music Company Logo" class="footer-logo">
                 <p>&copy; 2025 Crescent City Music. Bringing the soul of New Orleans to every note.</p>
             </div>
         </div>
