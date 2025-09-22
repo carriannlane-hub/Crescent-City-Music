@@ -13,24 +13,24 @@
         }
         
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.6;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.5;
             color: #000;
-            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            background: linear-gradient(180deg, #e3f2fd 0%, #bbdefb 100%);
             min-height: 100vh;
         }
         
         .container {
-            max-width: 1200px;
+            max-width: 100%;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 16px;
         }
         
-        /* Header */
+        /* Header - Simplified for mobile */
         header {
             background: rgba(13, 71, 161, 0.95);
             backdrop-filter: blur(10px);
-            padding: 1rem 0;
+            padding: 16px 0;
             position: fixed;
             width: 100%;
             top: 0;
@@ -38,94 +38,56 @@
             box-shadow: 0 2px 20px rgba(0,0,0,0.1);
         }
         
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
         .logo {
-            font-size: 1.8rem;
+            font-size: 1.4rem;
             font-weight: 700;
             color: white;
             text-decoration: none;
+            text-align: center;
+            display: block;
         }
         
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-        
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-        
-        .nav-links a:hover,
-        .nav-links a:focus {
-            color: #81c784;
-            outline: 2px solid #81c784;
-            outline-offset: 2px;
-        }
-        
-        /* Hero Section */
+        /* Hero Section - Mobile optimized */
         .hero {
-            background: linear-gradient(135deg, #1565c0 0%, #0d47a1 100%);
+            background: linear-gradient(180deg, #1565c0 0%, #0d47a1 100%);
             color: white;
-            padding: 120px 0 80px;
+            padding: 80px 16px 40px;
             text-align: center;
             position: relative;
-            overflow: hidden;
-        }
-        
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M20,50 Q50,20 80,50 T140,50" stroke="rgba(255,255,255,0.1)" stroke-width="2" fill="none"/></svg>') repeat;
-            animation: wave 20s linear infinite;
-        }
-        
-        @keyframes wave {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-100px); }
-        }
-        
-        .hero-content {
-            position: relative;
-            z-index: 2;
         }
         
         .hero h1 {
-            font-size: 3.5rem;
+            font-size: 2.2rem;
             font-weight: 800;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            margin-bottom: 12px;
+            line-height: 1.2;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
         }
         
         .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
+            font-size: 1.1rem;
+            margin-bottom: 24px;
+            opacity: 0.95;
+            line-height: 1.4;
         }
         
         .cta-button {
             display: inline-block;
             background: #4caf50;
             color: white;
-            padding: 15px 30px;
+            padding: 16px 32px;
             text-decoration: none;
-            border-radius: 8px;
+            border-radius: 10px;
             font-weight: 600;
             font-size: 1.1rem;
             transition: all 0.3s ease;
             box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+            min-height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: fit-content;
+            margin: 0 auto;
         }
         
         .cta-button:hover,
@@ -133,157 +95,147 @@
             background: #388e3c;
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
-            outline: 2px solid #81c784;
-            outline-offset: 2px;
         }
         
-        /* Services Section */
-        .services {
-            padding: 80px 0;
+        /* Section styling */
+        .section {
+            padding: 40px 16px;
+        }
+        
+        .section-white {
             background: white;
+        }
+        
+        .section-light {
+            background: linear-gradient(180deg, #f8f9fa 0%, #e3f2fd 100%);
         }
         
         .section-title {
             text-align: center;
-            font-size: 2.5rem;
+            font-size: 1.8rem;
             font-weight: 700;
-            margin-bottom: 3rem;
+            margin-bottom: 24px;
             color: #0d47a1;
+            line-height: 1.3;
         }
         
-        .contact .section-title {
-            color: white;
-            font-size: 3rem;
-            text-align: center;
-        }
-        
+        /* Services Section */
         .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
         }
         
         .service-card {
-            background: #f8f9fa;
-            padding: 2rem;
+            background: white;
+            padding: 24px 20px;
             border-radius: 12px;
             text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: 2px solid transparent;
-        }
-        
-        .service-card:hover,
-        .service-card:focus-within {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(13, 71, 161, 0.15);
-            border-color: #1976d2;
+            box-shadow: 0 2px 15px rgba(13, 71, 161, 0.1);
+            border: 1px solid #e0e0e0;
         }
         
         .service-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+            font-size: 2.5rem;
+            margin-bottom: 12px;
+            display: block;
         }
         
         .service-card h3 {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             font-weight: 600;
-            margin-bottom: 1rem;
+            margin-bottom: 12px;
             color: #0d47a1;
         }
         
         .service-card p {
-            color: #000;
-            line-height: 1.6;
+            color: #333;
+            line-height: 1.5;
+            font-size: 0.95rem;
         }
         
         /* About Section */
-        .about {
-            padding: 80px 0;
-            background: linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%);
-        }
-        
         .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-        }
-        
-        .about-text h2 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            color: #0d47a1;
-        }
-        
-        .about-text p {
-            color: #000;
-            margin-bottom: 1.5rem;
-            font-size: 1.1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
         }
         
         .about-image {
-            background: linear-gradient(45deg, #1976d2, #42a5f5);
-            height: 400px;
+            height: 320px;
             border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 4rem;
-            box-shadow: 0 10px 30px rgba(25, 118, 210, 0.3);
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(25, 118, 210, 0.2);
+            order: -1;
+            background: #f8f9fa;
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: center top;
+        }
+        
+        .about-text h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: #0d47a1;
+            text-align: center;
+        }
+        
+        .about-text p {
+            color: #333;
+            margin-bottom: 16px;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-align: left;
         }
         
         /* Blog Section */
-        .blog {
-            padding: 80px 0;
-            background: white;
-        }
-        
         .blog-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
         }
         
         .blog-card {
-            background: #f8f9fa;
+            background: white;
             border-radius: 12px;
             overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: 2px solid transparent;
-        }
-        
-        .blog-card:hover,
-        .blog-card:focus-within {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(13, 71, 161, 0.15);
-            border-color: #1976d2;
+            box-shadow: 0 2px 15px rgba(13, 71, 161, 0.1);
+            border: 1px solid #e0e0e0;
         }
         
         .blog-header {
             background: linear-gradient(135deg, #1976d2, #42a5f5);
             color: white;
-            padding: 2rem;
+            padding: 20px;
             text-align: center;
         }
         
         .blog-header h3 {
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             font-weight: 600;
-            margin-bottom: 0.5rem;
+            margin-bottom: 4px;
+            line-height: 1.3;
+        }
+        
+        .blog-header p {
+            font-size: 0.9rem;
+            opacity: 0.9;
         }
         
         .blog-content {
-            padding: 2rem;
+            padding: 20px;
         }
         
         .blog-content p {
-            color: #000;
-            margin-bottom: 1.5rem;
-            line-height: 1.6;
+            color: #333;
+            margin-bottom: 16px;
+            line-height: 1.5;
+            font-size: 0.95rem;
         }
         
         .blog-link {
@@ -291,40 +243,52 @@
             color: #1976d2;
             text-decoration: none;
             font-weight: 600;
-            border-bottom: 2px solid transparent;
-            transition: border-color 0.3s ease;
+            font-size: 0.95rem;
+            padding: 8px 16px;
+            border: 2px solid #1976d2;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            min-height: 40px;
+            line-height: 1.2;
         }
         
         .blog-link:hover,
         .blog-link:focus {
-            border-bottom-color: #1976d2;
-            outline: 2px solid #1976d2;
-            outline-offset: 2px;
+            background: #1976d2;
+            color: white;
         }
         
         /* Contact Section */
         .contact {
-            padding: 80px 0;
-            background: linear-gradient(135deg, #0d47a1 0%, #1565c0 100%);
+            background: linear-gradient(180deg, #0d47a1 0%, #1565c0 100%);
             color: white;
+            padding: 40px 16px;
+        }
+        
+        .contact .section-title {
+            color: white;
+            font-size: 2rem;
+            margin-bottom: 32px;
         }
         
         .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
         }
         
         .contact-item {
             text-align: center;
-            padding: 1.5rem;
+            padding: 20px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 12px;
+            backdrop-filter: blur(5px);
         }
         
         .contact-item h3 {
-            font-size: 1.3rem;
+            font-size: 1.1rem;
             font-weight: 600;
-            margin-bottom: 1rem;
+            margin-bottom: 8px;
             color: #81c784;
         }
         
@@ -332,14 +296,26 @@
         .contact-item a {
             color: white;
             text-decoration: none;
-            font-size: 1.1rem;
+            font-size: 1rem;
+            line-height: 1.4;
+        }
+        
+        .contact-item a {
+            display: inline-block;
+            padding: 12px 20px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 8px;
+            margin-top: 8px;
+            font-weight: 600;
+            min-height: 44px;
+            line-height: 1.2;
+            transition: all 0.3s ease;
         }
         
         .contact-item a:hover,
         .contact-item a:focus {
-            color: #81c784;
-            outline: 2px solid #81c784;
-            outline-offset: 2px;
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-1px);
         }
         
         /* Footer */
@@ -347,184 +323,8 @@
             background: #263238;
             color: white;
             text-align: center;
-            padding: 2rem 0;
-        }
-        
-        /* Responsive Design - Mobile First */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            
-            .hero h1 {
-                font-size: 2.8rem;
-                line-height: 1.2;
-            }
-            
-            .hero p {
-                font-size: 1.4rem;
-                margin-bottom: 2.5rem;
-            }
-            
-            .cta-button {
-                padding: 18px 35px;
-                font-size: 1.2rem;
-                min-height: 60px;
-                border-radius: 10px;
-            }
-            
-            .about-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-                gap: 2rem;
-            }
-            
-            .about-image {
-                height: 280px;
-                order: -1;
-            }
-            
-            .section-title {
-                font-size: 2.2rem;
-                margin-bottom: 2rem;
-            }
-            
-            .contact .section-title {
-                font-size: 2.8rem;
-            }
-            
-            .service-card {
-                padding: 2.5rem 1.5rem;
-            }
-            
-            .service-card h3 {
-                font-size: 1.6rem;
-                margin-bottom: 1.2rem;
-            }
-            
-            .service-card p {
-                font-size: 1.1rem;
-                line-height: 1.7;
-            }
-            
-            .service-icon {
-                font-size: 3.5rem;
-                margin-bottom: 1.5rem;
-            }
-            
-            .blog-card {
-                margin-bottom: 1rem;
-            }
-            
-            .blog-header h3 {
-                font-size: 1.6rem;
-            }
-            
-            .blog-content {
-                padding: 2.5rem 2rem;
-            }
-            
-            .blog-content p {
-                font-size: 1.1rem;
-                line-height: 1.7;
-            }
-            
-            .blog-link {
-                font-size: 1.1rem;
-                padding: 8px 0;
-                display: inline-block;
-            }
-            
-            .contact-grid {
-                gap: 2.5rem;
-                margin-top: 2rem;
-            }
-            
-            .contact-item {
-                padding: 2rem 1rem;
-            }
-            
-            .contact-item h3 {
-                font-size: 1.4rem;
-                margin-bottom: 1.2rem;
-            }
-            
-            .contact-item p,
-            .contact-item a {
-                font-size: 1.2rem;
-                line-height: 1.5;
-            }
-            
-            .contact-item a {
-                padding: 8px 16px;
-                border-radius: 6px;
-                background: rgba(255,255,255,0.1);
-                display: inline-block;
-                margin-top: 0.5rem;
-            }
-            
-            .about-text h2 {
-                font-size: 2.2rem;
-                margin-bottom: 1.5rem;
-            }
-            
-            .about-text p {
-                font-size: 1.1rem;
-                line-height: 1.7;
-                margin-bottom: 1.5rem;
-            }
-            
-            /* Larger tap targets */
-            .nav-links a,
-            .cta-button,
-            .blog-link,
-            .contact-item a {
-                min-height: 44px;
-                min-width: 44px;
-            }
-            
-            /* Better spacing */
-            .container {
-                padding: 0 15px;
-            }
-            
-            .services, .about, .blog, .contact {
-                padding: 60px 0;
-            }
-            
-            .hero {
-                padding: 100px 0 60px;
-            }
-        }
-        
-        /* Extra small screens */
-        @media (max-width: 480px) {
-            .hero h1 {
-                font-size: 2.4rem;
-            }
-            
-            .hero p {
-                font-size: 1.2rem;
-            }
-            
-            .services-grid,
-            .blog-grid {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-            
-            .contact-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-            
-            .section-title {
-                font-size: 2rem;
-            }
-            
-            .contact .section-title {
-                font-size: 2.4rem;
-            }
+            padding: 24px 16px;
+            font-size: 0.9rem;
         }
         
         /* Focus styles for accessibility */
@@ -549,35 +349,38 @@
         .skip-link:focus {
             top: 6px;
         }
+        
+        /* Ensure minimum touch targets */
+        .cta-button,
+        .blog-link,
+        .contact-item a {
+            min-height: 44px;
+            min-width: 44px;
+        }
+        
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
     </style>
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
     
     <header>
-        <nav class="container">
+        <div class="container">
             <a href="#" class="logo" aria-label="Crescent City Music Home">Crescent City Music</a>
-            <ul class="nav-links" role="navigation" aria-label="Main navigation">
-                <li><a href="#services">Services</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#blog">Blog</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+        </div>
     </header>
 
     <main id="main-content">
         <section class="hero">
-            <div class="container">
-                <div class="hero-content">
-                    <h1>Crescent City Music</h1>
-                    <p>Professional Recording Studio & Music Lessons in the Heart of New Orleans</p>
-                    <a href="#contact" class="cta-button">Start Your Musical Journey</a>
-                </div>
-            </div>
+            <h1>Crescent City Music</h1>
+            <p>Professional Recording Studio & Music Lessons in New Orleans</p>
+            <a href="#contact" class="cta-button">Get In Touch</a>
         </section>
 
-        <section id="services" class="services">
+        <section class="section section-white">
             <div class="container">
                 <h2 class="section-title">Our Services</h2>
                 <div class="services-grid">
@@ -600,7 +403,7 @@
             </div>
         </section>
 
-        <section id="about" class="about">
+        <section class="section section-light">
             <div class="container">
                 <div class="about-content">
                     <div class="about-text">
@@ -609,14 +412,14 @@
                         <p>Our studio provides a creative environment where artists can explore their sound and bring their musical dreams to reality. From jazz to blues, funk to contemporary, we celebrate all genres while honoring the soulful spirit of New Orleans music.</p>
                         <p>Under the guidance of owner Claire Duperie, we've built a reputation for excellence in both recording production and music instruction, helping countless artists and students achieve their musical goals.</p>
                     </div>
-                   <div class="about-image">
-    <img src="studio.jpg" alt="Artists recording at Crescent City Music studio">
-</div>
+                    <div class="about-image">
+                        <img src="studio.jpg" alt="Artists recording at Crescent City Music studio">
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="blog" class="blog">
+        <section class="section section-white">
             <div class="container">
                 <h2 class="section-title">Latest News</h2>
                 <div class="blog-grid">
@@ -692,17 +495,6 @@
                 }
             });
         });
-
-        // Add scroll effect to header
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('header');
-            if (window.scrollY > 100) {
-                header.style.background = 'rgba(13, 71, 161, 0.98)';
-            } else {
-                header.style.background = 'rgba(13, 71, 161, 0.95)';
-            }
-        });
     </script>
 </body>
-
 </html>
